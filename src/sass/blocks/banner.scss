@@ -1,0 +1,47 @@
+.banner {    
+    background-image: url("../img/header_bg.png");
+    background-repeat: no-repeat no-repeat;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    padding: 90px 0;
+
+    &__title {
+        font-family: $base-font-family;
+        @include adaptive-font(47, 24);
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.075em;
+        color: $color-white;
+        margin-bottom: 65px;
+
+        &--span {    
+            font-family: $base-font-family;
+            @include adaptive-font(150, 45);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.075em;
+        }
+    }
+    &__btn {
+        font-family: $base-font-family;
+        @include adaptive-font(18, 14);  
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: 0.075em;
+        color: $color-white;
+        padding: 1.4em;
+        background: $color-gradient;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;  
+
+        &:hover {
+            transform: scale(1.1);
+            border-radius: 20px;
+        }
+        &:active {
+            transform: scale(0.9);
+        }
+    }
+}

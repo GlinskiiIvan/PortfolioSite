@@ -1,0 +1,100 @@
+.services {
+    padding: 90px 0 10px 0;
+    font-family: $base-font-family;
+    letter-spacing: 0.075em;
+
+    &__title {
+        // font-size: $title-font-size + px;
+        @include adaptive-font($title-font-size, $title-font-size-min);
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $color-acent;
+        margin-bottom: 15px;
+    }
+    &__subtitle {
+        // font-size: 18px; 
+        @include adaptive-font(18, 16);
+        font-weight: 400;
+        color: $color-base-font;
+    }
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        margin-top: 73px;
+
+        @include s1000 {
+            justify-content: center;
+        }
+    }
+    &__item {
+        width: calc(100%/3);
+        padding: 0 35px;
+        margin-bottom: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        @include s1000 {
+            width: 40%;
+        }
+        @include s800 {
+            width: 60%;
+        }
+        @include s650 {
+            width: 90%;
+        }
+        @include s425 {
+            width: 100%;
+        }
+
+        &--icon {
+            display: block;
+            width: 100px;
+            height: 100px;
+            font-size: 45px;
+            background: $color-gradient;
+            color: $color-white;
+            border-radius: 50%;
+            margin-bottom: 30px;
+            position: relative;
+            transition: all .3s ease;
+
+            &:hover {
+                transform: scale(1.2) rotate(360deg);
+            }
+
+            &::before {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);                
+            }
+        }
+        &--title {
+            font-family: $base-font-family;
+            // font-size: 25px;
+            @include adaptive-font(25, 22);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.075em;
+            color: $color-acent;
+            margin-bottom: 30px;
+        }
+        &--text {
+            font-family: $base-font-family;
+            // font-size: $base-font-size;
+            @include adaptive-font(16, 14);
+            font-weight: 400;
+            letter-spacing: 0.075em;
+            color: $color-base-font;
+        }
+    }    
+}
+
+.services-wrapper {
+    text-align: center;
+}
+

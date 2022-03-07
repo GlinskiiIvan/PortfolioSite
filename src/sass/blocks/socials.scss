@@ -1,0 +1,105 @@
+.socials {
+    background-color: #dcdcde;
+    padding: 90px 0;
+
+    @include s800 {
+        padding: 90px 0 40px 0;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 33%;
+
+        @include s1200 {
+            flex-direction: column;
+        }
+        @include s800 {
+            width: 50%;
+            margin-bottom: 50px;
+        }
+        @include s650 {
+            width: 80%;
+        }
+    }
+    &__icon {
+        font-size: 25px;
+        color: $color-white;
+        background: $color-acent;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;    
+        position: relative;
+        transition: all .3s ease;
+
+        @include s1200 {
+            margin-bottom: 20px;
+        }
+
+        &:hover {
+            transform: scale(1.2) rotate(360deg);
+        }
+        &::before{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }    
+    }
+    &__info {
+        text-align: left;
+        max-width: 350px;
+        padding-left: 20px;
+
+        @include s1200 {
+            text-align: center;
+            padding: 0;
+        }
+
+        &--title {
+            font-family: $base-font-family;
+            font-size: 22px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.075em;
+            color: $color-acent;
+            margin-bottom: 20px;
+        }
+        &--text {
+            font-family: $base-font-family;
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 0.075em;
+            color: $color-base-font;
+        }
+        &--link {
+            transition: all 0.3s ease;
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: '';
+                display: block;
+                width: 0%;
+                height: 3px;
+                bottom: -10px;
+                background-color: $color-gradient;
+            }
+
+            &:hover::before {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.socials-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include s800 {
+        flex-direction: column;
+    }
+}

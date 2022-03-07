@@ -1,0 +1,113 @@
+.education {
+    background-color: $color-gradient;
+    font-family: $base-font-family;
+    color: $color-white;
+    letter-spacing: 0.075em;
+    padding: 90px 0 40px 0;
+
+    &__title {
+        // font-size: $title-font-size + px;
+        @include adaptive-font($title-font-size, $title-font-size-min);
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+    &__subtitle {
+        // font-size: 18px;
+        @include adaptive-font(18, 16);
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    &__container {
+        
+    }
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin: 50px 0;
+
+        @include s800 {
+            flex-direction: column;
+        }
+
+        &--info {
+            position: relative;  
+            font-size: 22px;
+            
+            @include s800 {
+                margin-bottom: 20px;
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                display: block;
+                width: 10px;
+                height: 100%;
+                background-color: $color-white;                
+            }            
+        }
+        &--desc {
+            width: 70%;
+            // font-size: 16px;
+            @include adaptive-font(16, 14);
+
+            @include s425 {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.education-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-left {
+
+    @include s800 {
+        flex-direction: column;
+    }
+    .education__item--info {
+        text-align: right;
+
+        &::before{
+            right: -50%;
+
+            @include s1000 {
+                    right: -20%;                    
+                }
+        }
+    }
+    .education__item--desc {
+        text-align: left;
+    }
+}
+
+.order-right {
+    flex-direction: row-reverse;
+
+    @include s800 {
+        flex-direction: column;
+    }
+
+    .education__item--info {
+        text-align: left;
+
+        &::before{
+            left: -35%;
+
+            @include s1000 {
+                    left: -20%;
+                }
+        }
+    }
+    .education__item--desc {
+        text-align: right;
+    }
+}

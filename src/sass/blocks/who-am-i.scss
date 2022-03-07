@@ -1,0 +1,113 @@
+.whoAmI {
+    padding: 90px 0;
+    background-image: url("../img/my_photo.png");
+    background-repeat: no-repeat no-repeat;
+    background-size: contain;
+    background-position: center center;   
+
+    @include s1200 {
+        padding: 90px 0 40px 0;
+        background-image: none;
+    }
+}
+
+.about-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+    
+    @include s1200 {
+        flex-direction: column;
+    }
+}
+
+.whoAmI__item {
+    width:calc( ( 100% ) / 3 );
+
+    @include s1200 {
+        width: 70%;
+        margin-bottom: 50px;        
+    }
+    @include s800 {
+        width: 100%;
+    }
+}
+
+.about {
+    text-align: right;
+}
+
+.about__title {
+    font-family: $base-font-family;
+    @include adaptive-font(50, 36);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
+    color: $color-acent;
+}
+
+.about__subtitle {
+    font-family: $base-font-family;
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
+    color: $color-purple;
+    margin-bottom: 30px;
+}
+
+.about__desc {
+    font-family: $base-font-family;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.075em;
+    color: $color-base-font;
+}
+
+// skils
+.skils {
+
+}
+
+.skils__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.skils__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: $base-font-family;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.075em;
+    color: $color-base-font;    
+    padding: 15px 0;
+}
+
+.skil-progress {
+    margin-top: 10px;
+    width: 90%;
+}
+
+progress.skil-progress {
+    display: block;
+    border-radius: 20px;
+    width: 80%;
+    height: 15px;
+}
+progress.skil-progress::-webkit-progress-bar {
+    background-color: $color-pink;
+    border-radius: 20px;
+}
+progress.skil-progress::-webkit-progress-value {
+    background-color: $color-purple;
+    border-radius: 20px;
+}
+progress.skil-progress::-moz-progress-bar {
+    background-color: $color-purple;
+    border-radius: 20px;
+}
